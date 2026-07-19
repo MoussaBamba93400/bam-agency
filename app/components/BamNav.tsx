@@ -34,6 +34,7 @@ export default function BamNav() {
     <header
       className={`${styles.nav} ${scrolled || open ? styles.scrolled : ""}`}
     >
+      <div className={styles.bar} aria-hidden />
       <div className={`container ${styles.inner}`}>
         <a href="#top" className={styles.brand} onClick={() => setOpen(false)}>
           <BamLogo size={34} />

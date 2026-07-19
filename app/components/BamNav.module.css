@@ -1,17 +1,30 @@
 .nav {
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 50;
+  z-index: 100;
   padding-block: 1rem;
+  transition: padding 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+/* Fond flou uniquement sur la barre — pas sur .nav, sinon
+   backdrop-filter piège le menu fixed et le limite à la hauteur du header */
+.bar {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   transition:
-    padding 0.3s ease,
     background-color 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
   border-bottom: 1px solid transparent;
 }
 
 .scrolled {
   padding-block: 0.7rem;
+}
+.scrolled .bar {
   background: rgba(10, 10, 15, 0.85);
   backdrop-filter: blur(12px);
   border-bottom-color: var(--border);
@@ -19,7 +32,7 @@
 
 .inner {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -95,11 +108,11 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Menu mobile */
+/* Menu mobile — plein viewport, au-dessus de la page, sous la barre */
 .mobile {
   position: fixed;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,6 +123,7 @@
   -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transform: translateY(-8px);
   transition:
     opacity 0.3s ease,
@@ -119,14 +133,15 @@
 .mobileOpen {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: none;
 }
 .mobile a:not(.mobileCta) {
   font-family: var(--font-display), sans-serif;
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 6vw, 2.1rem);
   font-weight: 600;
   color: var(--text);
-  padding-block: 0.75rem;
+  padding-block: 0.85rem;
   border-bottom: 1px solid var(--border);
 }
 .mobileCta {
