@@ -11,7 +11,7 @@ export const BRAND = {
     "L'agence qui crée des sites web pour les commerces locaux : plus de visibilité sur Google, plus de clients qui poussent la porte.",
   // ← Vérifiez / remplacez par le vrai lien de votre page Instagram
   instagram: "https://www.instagram.com/bam.agency/",
-  instagramHandle: "@bam.agency",
+  instagramHandle: "@bam.web.agency",
   email: "moussa.bam.pro@gmail.com",
   // ← Ajoutez votre numéro (laissé vide = bouton téléphone masqué)
   phone: "",
