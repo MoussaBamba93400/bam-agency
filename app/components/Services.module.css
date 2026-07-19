@@ -1,0 +1,175 @@
+.section {
+  padding-block: var(--section-pad);
+}
+
+.head {
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+.heading {
+  margin-top: 1.25rem;
+  font-size: clamp(1.85rem, 4vw, 2.85rem);
+}
+.intro {
+  margin-top: 1.25rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 52ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  align-items: stretch;
+}
+.cardWrap {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(1.6rem, 3vw, 2.25rem);
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-light);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+}
+
+.featured {
+  border-color: rgba(124, 92, 255, 0.4);
+  background: linear-gradient(
+    180deg,
+    rgba(124, 92, 255, 0.09),
+    var(--surface) 55%
+  );
+  box-shadow: 0 0 0 1px rgba(124, 92, 255, 0.15);
+}
+.featured:hover {
+  border-color: var(--accent);
+  box-shadow: 0 24px 55px rgba(124, 92, 255, 0.22);
+}
+
+.badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+}
+
+.cardEyebrow {
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 0.9rem;
+}
+.cardTitle {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  max-width: 18ch;
+}
+.pitch {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.benefits {
+  list-style: none;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.96rem;
+  color: var(--text);
+}
+.check {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-bright);
+  font-size: 0.75rem;
+  margin-top: 0.1rem;
+}
+
+/* Prestation reléguée (sur-mesure) */
+.minor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: clamp(1.25rem, 3vw, 1.75rem);
+  padding: clamp(1.4rem, 3vw, 1.9rem) clamp(1.6rem, 3vw, 2.25rem);
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border-light);
+  border-radius: 18px;
+}
+.minorText {
+  max-width: 62ch;
+}
+.minorEyebrow {
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+.minorTitle {
+  font-size: 1.2rem;
+}
+.minorPitch {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.minorLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--accent-bright);
+  white-space: nowrap;
+  transition: gap 0.2s ease;
+}
+.minorLink:hover {
+  gap: 0.7rem;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

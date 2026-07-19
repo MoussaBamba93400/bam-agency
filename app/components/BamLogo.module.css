@@ -1,0 +1,19 @@
+.chip {
+  display: inline-grid;
+  place-items: center;
+  width: calc(var(--logo-size) + 0.9rem);
+  height: calc(var(--logo-size) + 0.9rem);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.35rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  flex: none;
+}
+
+.img {
+  display: block;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  object-fit: contain;
+  border-radius: 4px;
+}

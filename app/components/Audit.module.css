@@ -1,0 +1,166 @@
+.section {
+  position: relative;
+  padding-block: var(--section-pad);
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(900px, 95vw);
+  height: 600px;
+  background: radial-gradient(
+    circle at center,
+    rgba(124, 92, 255, 0.16),
+    transparent 62%
+  );
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.heading {
+  margin-top: 1.25rem;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  max-width: 16ch;
+}
+.lead {
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 46ch;
+}
+
+.perks {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.perks li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+.check {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-bright);
+  font-size: 0.75rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.field label {
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+.field input,
+.field select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 0.95rem;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.field input::placeholder {
+  color: var(--text-dim);
+}
+.field select.placeholder {
+  color: var(--text-dim);
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.submit {
+  margin-top: 0.35rem;
+  width: 100%;
+  padding-block: 0.95rem;
+}
+.small {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.confirm {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: clamp(1.75rem, 5vw, 2.75rem);
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.bigCheck {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--accent-bright);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.confirm h3 {
+  font-size: 1.5rem;
+}
+.confirm p {
+  margin-top: 0.85rem;
+  color: var(--text-muted);
+}
+.confirm a {
+  color: var(--accent-bright);
+}
+.confirm .btn {
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

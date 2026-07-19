@@ -1,0 +1,151 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding-block: 1rem;
+  transition:
+    padding 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  padding-block: 0.7rem;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--border);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.brandText {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+.brandAccent {
+  color: var(--accent-bright);
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  gap: 1.9rem;
+}
+.links a {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+.links a:hover {
+  color: var(--text);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cta {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+.burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin-inline: auto;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.barTop {
+  transform: translateY(7px) rotate(45deg);
+}
+.barMid {
+  opacity: 0;
+}
+.barBot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menu mobile */
+.mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 6rem clamp(1.25rem, 6vw, 2.5rem) 2rem;
+  background: var(--bg);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+}
+.mobileOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.mobile a:not(.mobileCta) {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text);
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.mobileCta {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding-block: 1rem;
+}
+
+@media (max-width: 860px) {
+  .links {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+@media (max-width: 460px) {
+  .cta {
+    display: none;
+  }
+}
