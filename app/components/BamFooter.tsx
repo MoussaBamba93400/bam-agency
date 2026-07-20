@@ -37,6 +37,9 @@ export default function BamFooter() {
             <div className={styles.col}>
               <span className={styles.colLabel}>Contact</span>
               <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
+              {BRAND.phone ? (
+                <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>
+              ) : null}
               <a href={BRAND.instagram} target="_blank" rel="noreferrer">
                 Instagram {BRAND.instagramHandle}
               </a>

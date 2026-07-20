@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import BamLogo from "./BamLogo";
+import { BRAND } from "../data-bam";
 import styles from "./BamNav.module.css";
 
 const LINKS = [
@@ -52,6 +53,15 @@ export default function BamNav() {
         </nav>
 
         <div className={styles.right}>
+          {BRAND.phone ? (
+            <a
+              href={BRAND.phoneHref}
+              className={`btn btn-ghost ${styles.phone}`}
+              aria-label={`Appeler le ${BRAND.phoneDisplay}`}
+            >
+              Appeler
+            </a>
+          ) : null}
           <a href="#audit" className={`btn btn-primary ${styles.cta}`}>
             Audit gratuit
           </a>
@@ -75,6 +85,15 @@ export default function BamNav() {
             {l.label}
           </a>
         ))}
+        {BRAND.phone ? (
+          <a
+            href={BRAND.phoneHref}
+            className={styles.mobilePhone}
+            onClick={() => setOpen(false)}
+          >
+            Appeler {BRAND.phoneDisplay}
+          </a>
+        ) : null}
         <a
           href="#audit"
           className={`btn btn-primary ${styles.mobileCta}`}

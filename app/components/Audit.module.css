@@ -124,6 +124,11 @@
   color: var(--text-dim);
   text-align: center;
 }
+.small a {
+  color: var(--accent-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 .confirm {
   background: var(--surface);

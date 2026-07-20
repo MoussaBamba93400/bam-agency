@@ -77,6 +77,10 @@
   padding: 0.6rem 1.2rem;
   font-size: 0.85rem;
 }
+.phone {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.85rem;
+}
 
 /* Burger */
 .burger {
@@ -149,6 +153,14 @@
   width: 100%;
   padding-block: 1rem;
 }
+.mobilePhone {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.6rem, 6vw, 2.1rem);
+  font-weight: 600;
+  color: var(--accent-bright);
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
 
 @media (max-width: 860px) {
   .links {
@@ -161,6 +173,9 @@
 
 @media (max-width: 460px) {
   .cta {
+    display: none;
+  }
+  .phone {
     display: none;
   }
 }

@@ -13,8 +13,10 @@ export const BRAND = {
   instagram: "https://www.instagram.com/bam.web.agency/",
   instagramHandle: "@bam.web.agency",
   email: "moussa.bam.pro@gmail.com",
-  // ← Ajoutez votre numéro (laissé vide = bouton téléphone masqué)
-  phone: "",
+  // Affiché et cliquable (tel:) — laissé vide = liens téléphone masqués
+  phone: "0651734150",
+  phoneDisplay: "06 51 73 41 50",
+  phoneHref: "tel:+33651734150",
 };
 
 // ── Hero ───────────────────────────────────────────────────────

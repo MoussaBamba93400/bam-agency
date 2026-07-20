@@ -79,7 +79,15 @@ export default function Audit() {
               <p>
                 Votre demande est prête dans votre messagerie. Si rien ne
                 s&apos;est ouvert, écrivez-nous directement à{" "}
-                <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>.
+                <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
+                {BRAND.phone ? (
+                  <>
+                    {" "}
+                    ou appelez le{" "}
+                    <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>
+                  </>
+                ) : null}
+                .
               </p>
               <button
                 className="btn btn-ghost"
@@ -147,9 +155,17 @@ export default function Audit() {
               <button type="submit" className={`btn btn-primary ${styles.submit}`}>
                 Recevoir mon audit gratuit
               </button>
-              <p className={styles.small}>
-                Vos infos servent uniquement à vous répondre. Jamais de spam.
-              </p>
+              {BRAND.phone ? (
+                <p className={styles.small}>
+                  Préférez parler directement ?{" "}
+                  <a href={BRAND.phoneHref}>Appelez le {BRAND.phoneDisplay}</a>
+                  . Vos infos servent uniquement à vous répondre.
+                </p>
+              ) : (
+                <p className={styles.small}>
+                  Vos infos servent uniquement à vous répondre. Jamais de spam.
+                </p>
+              )}
             </form>
           )}
         </Reveal>
